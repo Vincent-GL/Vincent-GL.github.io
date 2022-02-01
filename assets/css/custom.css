@@ -134,20 +134,25 @@
 }
 
 /* Global font */
-body { font-family: var(--global-font) }
+body { font-family: 'Playfair Display' }
 
 header.hero-block h1 { color: #4fbdba  }
 header.hero-block h2 { color: #aefeff }
 
 .theme-one { background-color: #181d31 }
-.theme-one .col-4 h3 { color: var(--cyan-600) }
+.theme-one h3 { color:#35858b}
+.theme-one .col-4 h3 { color: #4fbdba }
 .theme-one .col-1 h2 { color: #4fbdba }
 
 .theme-one .col-4 p { color: #35858b } .theme-one .col-4 li { color: #35858b}
 
-.theme-two { background-color: var(--blue-800) }
-.theme-two h2 { color: var(--white-000) } 
+.theme-two { background-color: var(--blue-900) }
+.theme-two h3 { color: #4fbdba } 
 .theme-two h3 { color: var(--white-000) } 
 .theme-two .upper-label { color: var(--white-000) }
-.theme-two p { color: var(--white-000) }
+.theme-two p { color: #aefeff }
 .theme-two li { color: var(--white-000) }
+
+footer {background-color:  #181d31}
+footer h3 { color: #aefeff }
+footer h2 { color:  #4fbdba}
