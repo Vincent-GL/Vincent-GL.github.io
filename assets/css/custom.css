@@ -147,7 +147,7 @@ header.hero-block h2 { color: #aefeff }
 .theme-one .col-4 p { color: #35858b } .theme-one .col-4 li { color: #35858b}
 
 .theme-two { background-color: var(--blue-900) }
-.theme-two h3 { color: #4fbdba } 
+.theme-two h2 { color: #4fbdba } 
 .theme-two h3 { color: var(--white-000) } 
 .theme-two .upper-label { color: var(--white-000) }
 .theme-two p { color: #aefeff }
