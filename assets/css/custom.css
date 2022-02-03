@@ -128,13 +128,14 @@
     --ontrend-800: #1f364d;
     --ontrend-900: #0e2439;
 
-    --global-font: var(--sans-serif);
+    --global-font: 'Playfair Display';
     --drop-shadow: var(--gray-500);
     --img-border: var(--gray-700);
 }
 
 /* Global font */
 body { font-family: 'Playfair Display' }
+footer { font-family: 'Playfair Display'}
 
 header.hero-block h1 { color: #4fbdba  }
 header.hero-block h2 { color: #aefeff }
@@ -156,3 +157,17 @@ header.hero-block h2 { color: #aefeff }
 footer {background-color:  #181d31}
 footer h3 { color: #aefeff }
 footer h2 { color:  #4fbdba}
+
+.theme-three { background-color: var(--black-000) }
+.theme-three .col-2 p { color: var(--gray-400) }
+.theme-three .col-2 li { color: var(--gray-400) }
+.theme-three .col-2 h2 { color: var(--white-000) }
+.theme-three a.btn-primary:link { background-color: var(--teal-400) }
+.theme-three a.btn-primary:visited { background-color: var(--teal-400) }
+
+.theme-four { background-color: var(--gray-800) }
+.theme-four .col-2 p { color: var(--gray-400) }
+.theme-four .col-2 li { color: var(--gray-400) }
+.theme-four .col-2 h2 { color: var(--white-000) }
+.theme-four a.btn-primary:link { background-color: var(--teal-400) }
+.theme-four a.btn-primary:visited { background-color: var(--teal-400) }

@@ -128,7 +128,7 @@
     --ontrend-800: #1f364d;
     --ontrend-900: #0e2439;
 
-    --global-font: var(--sans-serif);
+    --global-font: 'Outfit';
     --drop-shadow: var(--gray-500);
     --img-border: var(--gray-700);
 }

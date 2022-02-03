@@ -4,18 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Web Page Title</title>
-    <meta name="description" content="Sample web page description goes here.">
+    <title>Portfolio</title>
+    <meta name="description" content="Portfolio page">
 
 	<!-- Preload hero image -->
-
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/apple-touch-icon.png">    
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/img//favicon-32x32.png">    
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/img//favicon-16x16.png"> 
 
 	<!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/lunadoge.css" />
-    <link rel="stylesheet" href="assets/css/custom.css" />
+    <link rel="stylesheet" href="../assets/css/lunadoge.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css" />
 
 	<!-- Google Fonts -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
     
 	<!-- Font Awesome 5 icons -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
@@ -27,31 +31,141 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
     rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    
 </head>
 
 
 <body>
 
     <!-- navigation menu -->
-    <nav></nav>
+    <header class="hero-block text-center-desktop text-center-mobile">
 
-    <!-- header hero block -->
-    <header>
-
+      <div class="hero-text-container">
+        <h1 class="text-shadow slide-in-top">Vincent Goguyer-lalande</h1>
+        <h2 class="text-shadow slide-in-top">Portfolio</h2>
+      </div>
+    
+    
+        <div class="container-btn">
+          <a href="../contact/index.html" class="btn btn-primary"><i class="fas fa-arrow-right"></i><span>Contact</span></a>
+          <a href="#main" class="btn btn-secondary"><i class="fas fa-arrow-down"></i><span>Look</span></a>
+        </div>
+      
+      <div class="hero-bg-media">
+        <img src="../assets/img/background_portfolio.jpeg" alt="Placeholder image">
+      </div>
+    
+      <div class="bg-overlay"></div>
+    
     </header>
 
+    <!-- header hero block -->
+   
 
     <!-- main content with sections -->
-    <main>
-        
+    <main id="main">
 
+      
+		<section class="container-flex cols-2-split split-image-right theme-three">
+
+      <div class="col-2">
+        <h2>Van gogh</h2>
+        <p>A summary of the life and work of Dutch artist Vincent van Gogh with an embeded video from YouTube.</p>
+      <div class="container-btn"><a href="van-gogh/index.html" class="btn btn-primary btn-rounded"><i class="fas fa-arrow-circle-right"></i><span>Visit</span></a></div>
+      </div>
+  
+      <div class="col-2">
+        <figure><img src="../assets/img/project-van-gogh.png" alt="Van gogh"></figure>
+      </div>
+    </section>
+
+    
+		<section class="container-flex cols-2-split theme-four split-image-left">
+
+      <div class="col-2">
+        <h2>Smooth smoothies</h2>
+        <p>A multi-column, flexbox-based page layout and hero image with a tinted overlay.</p>
+      <div class="container-btn"><a href="smoothies/index.html" class="btn btn-primary btn-rounded"><i class="fas fa-arrow-circle-right"></i><span>Visit</span></a></div>
+      </div>
+  
+      <div class="col-2">
+        <figure><img src="../assets/img/project-smoothie.jpg" alt="Smoothies"></figure>
+      </div>
+    </section>
+
+    <section class="container-flex cols-2-split split-image-right theme-three">
+
+      <div class="col-2">
+        <h2>Snazzy Fashion</h2>
+        <p>A web page for a fashion retailer with a background video that plays in a continuous loop.</p>
+      <div class="container-btn"><a href="fashion/index.html" class="btn btn-primary btn-rounded"><i class="fas fa-arrow-circle-right"></i><span>Visit</span></a></div>
+      </div>
+  
+      <div class="col-2">
+        <figure><img src="../assets/img/project-fashion.jpg" alt="Fashion"></figure>
+      </div>
+    </section>
+
+    <section class="container-flex cols-2-split theme-four split-image-left">
+
+      <div class="col-2">
+        <h2>Crypto wallet</h2>
+        <p>A responsive, multi-column single-page website for a fictitious crypto wallet.</p>
+      <div class="container-btn"><a href="crypto-wallet/index.html" class="btn btn-primary btn-rounded"><i class="fas fa-arrow-circle-right"></i><span>Visit</span></a></div>
+      </div>
+  
+      <div class="col-2">
+        <figure><img src="../assets/img/wallet.jpg" alt="wallet"></figure>
+      </div>
+    </section>
+      <section class="text-center theme-two">
+
+        <h2>That's not all !</h2>
+        <p>if you are interested in my creations, please <a href="../exercices.html">click here</a> to see more websites i created. </p>
+        
+        </section>
     </main>
 
     
     <!-- footer -->
-    <footer></footer>
+    <footer>
+      <h3>Web | UI design</h3>
+
+      <ul class="footer-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="../contact/index.html">Contact</a></li>
+      </ul>
+
+      <ul class="footer-icons">
+          <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+          <li><a href="https://github.com/Vincent-GL/Vincent-GL.github.io" target="_blank"><i class="fab fa-github-square"></i></a></li>
+          <li><a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
+          <li><a href="#" target="_blank"><i class="fab fa-instagram-square"></i></a></li>
+      </ul>
+
+      <p class="privacy"><a href="https://vincent-gl.github.io/privacy.html">Privacy &amp; Legal</a></p>
+</footer>
        
     <script src="assets/js/menu.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#000"
+    },
+    "button": {
+      "background": "#f1d600"
+    }
+  },
+  "content": {
+    "href": "https://vincent-gl.github.io/privacy.html"
+  }
+});
+</script>
 </body>
 </html>
