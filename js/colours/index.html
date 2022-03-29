@@ -54,7 +54,7 @@
                     padding: 20px; line-height: 2; 
                 }
         
-                #color-display { background-color: white; font-weight: 400; padding: 6px 10px  }
+                #color-display { background-color: black; font-weight: 400; padding: 6px 10px  }
         
                 .theme-js p { width: 100% }
                 #btn-color { 
@@ -96,17 +96,23 @@
                     <div class="bar3"></div>
                 </div>
             </nav>
-        <header class="New header">
-            <div class="hero-text-container">
-                <h1>Random Colour Generator</h1>
-            </div> 
-        </header>
+            <header class="hero-block hero-block-js">
+                <div class="hero-text-container">
+                    <h1>Random Colour Generator <span>JavaScript Project</span></h1>
+                    <h2>Uses an array of hexadecimal values to randomly generate a background colour for the web page. View my complete collection of <a href="../index.html">JavaScript projects</a>.</h2>
+                </div>
+            </header>
         <main>
 
+            <section class="container-flex theme-js">
 
-            <h2>Background Colour: &nbsp;<span id="color-display">#dbf4e4</span></h2>
-            <button class="btn" id="btn-color"><i class="fa-solid fa-paint-roller"></i> Click me</button>
-            
+                <h2>Background Colour: &nbsp;<span id="color-display">#dbf4e4</span></h2>
+                <p>&nbsp;</p>
+                <button class="btn" id="btn-color">
+                    <i class="fa-solid fa-paint-roller"></i> Click me
+                </button>
+    
+            </section>
         </main>
 
         <footer>
@@ -141,7 +147,7 @@
                     strHexcolor=strHexcolor+arrHex[getRandomNumber()];
                 }
                 strColorDisplay.textContent=strHexcolor;
-                document.querySelector("body").style.backgroundColor=strHexcolor;
+                document.querySelector(".theme-js").style.backgroundColor=strHexcolor;
                 console.log("clicked")
             });
 
