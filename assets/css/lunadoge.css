@@ -2223,5 +2223,5 @@ footer p.privacy a:hover, footer p.privacy a:active {
     overscroll-behavior-y: contain
 }
 
-
+a.btn i, button i { margin-right: 12px;}
 

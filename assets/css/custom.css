@@ -171,3 +171,5 @@ footer h2 { color:  #4fbdba}
 .theme-four .col-2 h2 { color: var(--white-000) }
 .theme-four a.btn-primary:link { background-color: var(--teal-400) }
 .theme-four a.btn-primary:visited { background-color: var(--teal-400) }
+
+.container-contact-form { background-color: var(--gray-900) }
