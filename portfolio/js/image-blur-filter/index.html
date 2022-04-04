@@ -8,7 +8,7 @@
     <meta name="description" content="Uses CSS variables and HTML custom data attributes to adjust the filter blur property of an image.">
 
 	<!-- Stylesheets -->
-    <link rel="stylesheet" href="../../../assets/css/lunadoge.css" />
+    <link rel="stylesheet" href="../../../assets/css/lunadoge.min.css" />
     <link rel="stylesheet" href="../../../assets/css/css-javascript.css" />
 
     <style>
@@ -73,7 +73,7 @@
     <!-- navigation menu -->
 
     <nav class="container-menu menu-desktop menu-sticky">
-        <a href="#"><img src="../../../assets/img/website-logo.png" alt="website logo"></a>
+        <a href="#"><img src="../../../assets/img/headerbackground.jpg" alt="website logo"></a>
         <ul class="">
             <li><a href="../../../index.html">Home</a></li>
             <li><a href="../../../portfolio/index.html">Portfolio</a></li>
@@ -124,7 +124,7 @@
     <!-- footer -->
 	<footer>
 
-		<h2>Your Name Here</h2>
+		<h2>Vincent goguyer-lalande</h2>
 
 		<h3>Excellence in digital creation</h3>
 
@@ -144,7 +144,21 @@
     </footer>
 
     <script src="../../../assets/js/menu.js"></script>
+    <script>
+    // Get controls
+    const inputs = document.querySelectorAll('.controls input');
 
+    // Attach event listeners
+    inputs.forEach(input => input.addEventListener('change', handleUpdate));
+    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+        
+    function handleUpdate() {
+    // dataset retrieves the suffix from the data object
+    const suffix = this.dataset.sizing || ''; 
+    // Set a style property (css variable from the page);
+    document.querySelector(".theme-js").style.setProperty(`--${this.name}`, this.value + suffix); 
+    }
+    </script>
 
 </body>
 </html>
