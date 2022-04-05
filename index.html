@@ -4,176 +4,227 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vincent Goguyer-lalande</title>
-    <meta name="description" content="Main Page">
-
-	<!-- Preload hero image -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">    
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img//favicon-32x32.png">    
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img//favicon-16x16.png"> 
+    <title>JavaScript Calculator with Modules | Mary Smith | Front-end Developer</title>
+    <meta name="description" content="A basic calculator that uses export/import statements to share code with a JavaScript module file.">
 
 	<!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/lunadoge.css" />
-    <link rel="stylesheet" href="assets/css/custom.css" />
-
-	<!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
-    
-	<!-- Font Awesome 5 icons -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
-
-    <!-- Light Awesome icons -->
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-
-    <!-- Google Material Design Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-    rel="stylesheet">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FY3LVV3MB3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FY3LVV3MB3');
-</script>
-        
-
-<meta name="google-site-verification" content="VZmBeARqAdZr6UbYLiqs__GmNPVonP5yaXISBp8C_dA" />
-
-<!-- Begin Inspectlet Asynchronous Code -->
-<script type="text/javascript">
-    (function() {
-    window.__insp = window.__insp || [];
-    __insp.push(['wid', 246819126]);
-    var ldinsp = function(){
-    if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js?wid=246819126&r=' + Math.floor(new Date().getTime()/3600000); var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
-    setTimeout(ldinsp, 0);
-    })();
-    </script>
+    <link rel="stylesheet" href="../../../assets/css/lunadoge.min.css" />
+    <link rel="stylesheet" href="../../../assets/css/css-javascript.css" />
     <style>
-        #link_click {color : #fff !important}
+
+        /* ============ Header Colours =============*/
+        header.hero-block-js { background-color: #f7df1e }
+        header.hero-block-js h1 { color: #222 }
+        header.hero-block-js h2 { color: var(--gray-700) }
+
+        /* Main Colours */
+        .theme-js { 
+            background-image:#ff0000; background-image:  
+            radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0, transparent 50%),  
+            radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0, transparent 50%),  
+            radial-gradient(at 0% 50%, hsla(355,85%,93%,1) 0, transparent 50%),  
+            radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0, transparent 50%),  
+            radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0, transparent 50%),  
+            radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0, transparent 50%),  
+            radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0, transparent 50%);
+        }
+
+        .container-flex { position: relative }
+        /* ========= ENDS CUSTOM CSS FOR WEB PAGE ======= */
+
+        .calculator {
+            display: block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            width: 400px;
+            margin-left: auto; margin-right: auto;
+        }
+
+        .calculator-screen {
+            width: 100%;
+            font-size: 4.25rem;
+            height: 80px;
+            border: none;
+            background-color: #252525;
+            color: #fff;
+            text-align: right;
+            padding-right: 20px;
+            padding-left: 10px;
+        }
+
+        button {
+            height: 60px;
+            background-color: #fff;
+            border-radius: 3px;
+            border: 1px solid #c4c4c4;
+            background-color: transparent;
+            font-size: 2rem;
+            color: #333;
+            background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+            text-shadow: 0 1px rgba(255,255,255,.4);
+        }
+
+        button:hover {
+            background-color: #eaeaea;
+        }
+
+        .operator {
+            color: #337cac;
+        }
+
+        .all-clear {
+            background-color: #f0595f;
+            border-color: #b0353a;
+            color: #fff;
+        }
+
+         .all-clear:hover {
+            background-color: #f17377;
+        }
+
+        .equal-sign {
+            background-color: #2e86c0;
+            border-color: #337cac;
+            color: #fff;
+            height: 100%;
+            grid-area: 2 / 4 / 6 / 5;
+        }
+
+        .equal-sign:hover {
+            background-color: #4e9ed4;
+        }
+
+         .calculator-keys {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
+         }
+
+        
     </style>
-    <!-- End Inspectlet Asynchronous Code -->
+
+	<!-- Font Awesome 6.1 icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 
 <body>
 
     <!-- navigation menu -->
+
+    <nav class="container-menu menu-desktop menu-sticky">
+        <a href="#"><img src="../../../assets/img/website-logo.png" alt="website logo"></a>
+        <ul class="">
+            <li><a href="../../../index.html">Home</a></li>
+            <li><a href="../../../portfolio/index.html">Portfolio</a></li>
+            <li><a href="../../../contact/index.html" id="btn-cta"><span>Contact</span><i class="fas fa-arrow-right"></i></a></li>
+        </ul>
+        <div class="item-icon">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+    </nav>
         
-    <nav></nav>
     <!-- header hero block -->
-    <header class="hero-block text-center-desktop text-center-mobile">
-
+    <header class="hero-block hero-block-js">
         <div class="hero-text-container">
-            <h1 class="text-shadow">Vincent Goguyer-lalande</h1>
-            <h2 class="text-shadow">front-end developper</h2>
+            <h1>Calculator with Modules <span>JavaScript Project</span></h1>
+            <h2>A basic calculator that uses export/import statements to share code with a JavaScript module file. View my complete collection of <a href="../index.html">JavaScript projects</a>.</h2>
         </div>
-    
-    
-            <div class="container-btn">
-                <a href="portfolio/index.html" class="btn btn-primary btn-rounded"><i class="fas fa-arrow-right"></i><span>Portfolio</span></a>
-                <a href="contact/index.html" class="btn btn-secondary btn-rounded"><i class="fas fa-arrow-right"></i><span>Contact</span></a>
-            </div>
-        
-        <div class="hero-bg-media">
-            <img src="assets/img/headerbackground.jpg" alt="Placeholder image">
-        </div>
-    
-        <div class="bg-overlay"></div>
-    
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
-
     </header>
 
     <!-- main content with sections -->
     <main>
         
-    
-	<section class="container-flex theme-one">
-		<div class="col-1 text-center">
-			<h2 id="portfolio">Recent projects</h2>
-			<h3>You can find below some examples of my recent work.</h3>
-		</div>
-		<div class="col-4">
-			<figure><a href="portfolio/van-gogh/index.html"><img src="assets/img/project-van-gogh.png" alt="Van gogh"></a> </figure>
-			<h3>Vincent Van Gogh</h3>
-			<p>A summary of the life and work of Dutch artist Vincent van Gogh with an embeded video from YouTube.</p>
-		</div>
-		<div class="col-4">
-			<figure><a href="portfolio/smoothies/index.html"><img src="assets/img/project-smoothie.jpg" alt="Smoothies"></a></figure>
-			<h3>Smooth smoothies</h3>
-			<p>A multi-column, flexbox-based page layout and hero image with a tinted overlay.</p>
-		</div>
-		<div class="col-4">
-			<figure><a href="portfolio/fashion/index.html"><img src="assets/img/project-fashion.jpg" alt="Fashion"></a></figure>
-			<h3>Snazzy Fashion</h3>
-			<p>A web page for a fashion retailer with a background video that plays in a continuous loop.</p>
-		</div>
-		<div class="col-4">
-			<figure><a href="portfolio/crypto-wallet/index.html"><img src="assets/img/wallet.jpg" alt="Wallet"></a></figure>
-			<h3>Crypto wallet</h3>
-			<p>A responsive, multi-column single-page website for a fictitious crypto wallet.</p>
-		</div>
-	</section>
+        <section class="container-flex theme-js">
 
-    <section class="text-center theme-two">
+            <div class="calculator">
+                <input type="text" class="calculator-screen" value="" disabled />
+          
+                <div class="calculator-keys">
+                  <button type="button" class="operator" value="+">+</button>
+                  <button type="button" class="operator" value="-">-</button>
+                  <button type="button" class="operator" value="*">&times;</button>
+                  <button type="button" class="operator" value="/">&divide;</button>
+          
+                  <button type="button" value="7">7</button>
+                  <button type="button" value="8">8</button>
+                  <button type="button" value="9">9</button>
+          
+                  <button type="button" value="4">4</button>
+                  <button type="button" value="5">5</button>
+                  <button type="button" value="6">6</button>
+          
+                  <button type="button" value="1">1</button>
+                  <button type="button" value="2">2</button>
+                  <button type="button" value="3">3</button>
+          
+                  <button type="button" value="0">0</button>
+                  <button type="button" class="decimal" value=".">.</button>
+                  <button type="button" class="all-clear" value="all-clear">AC</button>
+          
+                  <button type="button" class="equal-sign operator" value="=">=</button>
+                </div>
+              </div>      
 
-        <h2>That's not all !</h2>
-        <p>if you are interested in my creations, please <a href="exercices.html" id="link_click">click here</a> to see more websites i created. </p>
-        
         </section>
-        </main>
+
+    </main>
+
+    <script>
+
+    </script>
 
     
     <!-- footer -->
-    <footer>
-    
+	<footer>
 
-        <h3>Web | UI design</h3>
+		<h2>Vincent Goguyer-lalande</h2>
 
-        <ul class="footer-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="portfolio/index.html">Portfolio</a></li>
-            <li><a href="contact/index.html">Contact</a></li>
-        </ul>
+		<h3>Excellence in digital creation</h3>
 
-        <ul class="footer-icons">
-            <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-            <li><a href="https://github.com/Vincent-GL/Vincent-GL.github.io" target="_blank"><i class="fab fa-github-square"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
-            <li><a href="#" target="_blank"><i class="fab fa-instagram-square"></i></a></li>
-        </ul>
+		<ul class="footer-links">
+			<li><a href="../../../index.html">Home</a></li>
+			<li><a href="../../../portfolio/index.html">Portfolio</a></li>
+			<li><a href="../../../contact/index.html">Contact</a></li>
+		</ul>
 
-        <p class="privacy"><a href="https://vincent-gl.github.io/privacy.html">Privacy &amp; Legal</a></p>
+		<ul class="footer-icons">
+			<li><a href="https://www.linkedin.com/nnnnnnnnnnn" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+			<li><a href="https://github.com/nnnnnnnnnn" target="_blank"><i class="fab fa-github-square"></i></a></li>
+		</ul>
 
-    </footer>
+		<p class="index.html"> <a href="../../../privacy.html" style="color: #fff; background-color:transparent;">Privacy &amp; Legal</a> </p>
        
-    <script src="assets/js/menu.js"></script>
+    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
-<script>
+    <script src="../../../assets/js/menu.js"></script>
+    <script type="module" src="app.js"></script>
+    <script type="module" src="perform-calculations.js"></script>
 
-    
-window.cookieconsent.initialise({
-  "palette": {
-    "popup": {
-      "background": "#000"
-    },
-    "button": {
-      "background": "#f1d600"
-    }
-  },
-  "content": {
-    "href": "https://vincent-gl.github.io/privacy.html"
-  }
-});
-</script>
 
+    <!-- <div class="col-2">
+                
+        <h3>Calculator with Modules</h3>
+        
+        <p>A basic calculator that uses export/import statements to share code with a JavaScript module file.</p>
+        
+        <div class="container-btn">
+            <a href="calculator-modules/index.html" class="btn btn-primary"><span>View project</span> <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </div>
+    <script type="module" src="app.js"></script>
+    <script type="module" src="perform-calculations.js"></script> -->
 </body>
 </html>
+
+
+
+
+
+
